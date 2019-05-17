@@ -27,6 +27,7 @@ let t2 = performance.now();
 console.log(`Time Elapsed addUpTo: ${(t2 - t1) / 1000}`)
 
 // time performance of addUpTo() averages .99 seconds
+// number of operations is eventually bounded by a multiple of n, O(n)
 
 function addUpToNew(n) {
     return n * (n + 1) / 2;
@@ -48,6 +49,7 @@ let test2 = performance.now();
 console.log(`Time Elapsed addUpToNew: ${(test2 - test1) / 1000}`)
 
 // time performance of addUpToNew() averages .000006 seconds
+// always 3 operations, O(1)
 
 /* 
 margins of time will change on different machines
