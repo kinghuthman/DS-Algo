@@ -54,7 +54,7 @@ the frequency counter pattern OR the multiple pointers pattern.
 console.log(areThereDuplicates(
     'areThereDuplicates1', 1, 2, 3)) // false
 console.log(areThereDuplicates(
-    'areThereDuplicates2', 1, 2, 3, 3)) // true
+    'areThereDuplicates2', 1, 3, 2, 3, 23)) // true
 console.log(areThereDuplicates(
     'areThereDuplicates3', 'a', 'b', 'c', 'c')) // true
 
@@ -77,3 +77,20 @@ function areThereDuplicates() {
     }
     return false
 }
+
+// Multiple Pointers solution
+// function areThereDuplicates(...args) {
+//     // Two pointers
+//     args.sort((a, b) => a - b)
+//     console.log(args)
+//     let start = 0;
+//     let next = 1;
+//     while (next < args.length) {
+//         if (args[start] === args[next]) {
+//             return true
+//         }
+//         start++
+//         next++
+//     }
+//     return false
+// }
