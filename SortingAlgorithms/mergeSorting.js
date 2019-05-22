@@ -11,25 +11,9 @@ and move on to the next value in the second array.
 the other array.
 */
 
-console.log('mergeSort', mergeSort2([3, 5, 8, 10], [1, 2, 4, 6, 7, 9]));
+console.log('merge', merge([3, 5, 8, 10], [1, 2, 4, 6, 7, 9]));
 
-function mergeSort(arr1, arr2) {
-    var emptyArr = [];
-    while (arr1.length >= 0 && arr2.length >= 0) {
-        for (var i = 0; i <= arr1.length; i++) {
-            for (var j = 0; j <= arr2.length; j++) {
-                if (arr1[i] > arr2[j]) {
-                    emptyArr.push(arr1[i]);
-                }
-                emptyArr.push(arr2[j]);
-            }
-
-        }
-    }
-    return emptyArr;
-}
-
-function mergeSort2(arr1, arr2) {
+function merge(arr1, arr2) {
     // initialize our pointers i, j
     let i = 0;
     let j = 0;
@@ -65,3 +49,27 @@ function mergeSort2(arr1, arr2) {
     }
     return emptyArr;
 }
+
+/* Break up the array into halves until you have arrays that are empty
+or have one element.
+    Once you have smaller sorted arrays, merge those arrays with other
+sorted arrays until you are back at the full length of the array
+    Once the array has been merged back together, return the merged
+and sorted array.
+*/
+console.log('mergeSort', mergeSort([10, 3, 4, 6, 1, 9, 2, 8, 7, 5]))
+
+function mergeSort(arr) {
+    // if arr is 0 or 1 return array
+    if (arr.length <= 1) return arr;
+    // find the midpoint of the array
+    let mid = Math.floor(arr.length / 2)
+    // break the left side of the array down recursively to sort/merge
+    let left = mergeSort(arr.slice(0, mid));
+    // break the right side of the array down recursively to sort/merge
+    let right = mergeSort(arr.slice(mid));
+    // return the two sorted sides as one merged array that is sorted
+    return merge(left, right)
+}
+
+// time = O(n log n), space = O(n)
