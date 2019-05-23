@@ -119,7 +119,7 @@ class SinglyLinkedList {
         Decrement the length.
         Return the value of the node(removed).
     */
-
+    // O(1) or O(n)
     remove(idx) {
         /* if idx is less than 0 or greater than/equal to length r
         return undefined*/

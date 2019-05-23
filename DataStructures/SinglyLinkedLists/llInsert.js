@@ -99,7 +99,7 @@ class SinglyLinkedList {
         Increment the length.
         Return true.
     */
-
+    // O(1)
     insert(val, idx) {
         // if idx is less than 0 or larger than length
         if (idx < 0 || idx > this.length) {

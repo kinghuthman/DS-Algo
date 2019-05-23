@@ -76,7 +76,7 @@ class SinglyLinkedList {
         Loop through the list until you reach the index and return
     the node at that specific index. 
     */
-
+    // O(n)
     get(idx) {
         /* if the index is less than 0 or greater than or equal
     to the length of the list return null        
