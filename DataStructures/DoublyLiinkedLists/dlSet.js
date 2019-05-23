@@ -70,46 +70,45 @@ class DoublyLinkedList {
         this.length++
         return this;
     }
-
-    /* If the index is less than 0 or greater or equal to the length,
-    return null.
-        If the index is less than or equal to half the length of the list 
-            loop through the list starting from the head and loop
-        towards the middle
-            Return the node once it is found.
-        If the index is greater than half the length of the list
-            Loop through the list starting from the tail and loop
-        towards the middle.
-            Return the node once it is found.
-    */
-
     get(idx) {
         if (idx < 0 || idx >= this.length) {
             return null;
         }
         if (idx <= this.length / 2) {
-            // confirm we've reached index
             var count = 0;
-            // the starting point
             var current = this.head;
             while (count !== idx) {
-                // to traverse the list
                 current = current.next;
                 count++;
             }
             return current;
         } else {
-            // end of the list
             var count = this.length - 1
-            // start from the tail
             var current = this.tail;
             while (count !== idx) {
-                // traverse through the list from right to left
                 current = current.prev;
                 count--;
             }
         }
         return current;
+    }
+    /* Create a variable which is the result of the get method at 
+    the index passed to the function.
+        If the get method returns a valid node, set the value of
+    that node to be value passed to the function.
+        Return true.
+        Otherwise return false.
+    */
+    set(idx, val) {
+        // variable for retrieved node
+        var foundNode = this.get(idx);
+        // if node exists and isnt null
+        if (foundNode != null) {
+            // set the value of the node found to the variable
+            foundNode.val = val;
+            return true
+        }
+        return false;
     }
 }
 
@@ -125,3 +124,5 @@ console.log('shift', list.shift())
 console.log('unshift', list.unshift('hiii'))
 console.log('unshift', list.unshift('bye'))
 console.log('get', list.get(2))
+console.log('set', list.set(2, '10000'))
+console.log('3rd list', list)
