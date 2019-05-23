@@ -41,6 +41,13 @@ class SinglyLinkedList {
         this.length++
         return this;
     }
+    traverse() {
+        var current = this.head;
+        while (current) {
+            console.log(current.val);
+            current = current.next;
+        }
+    }
 }
 // var first = new Node("Hi")
 // first.next = new Node("there")
@@ -57,6 +64,7 @@ console.log('push 99', list.push(99))
 console.log('4th list', list)
 console.log('push 40', list.push("40"))
 console.log('5th list', list)
+console.log(list.traverse())
 
 // list.push("Hello")
 // list.push("Goodbye")
