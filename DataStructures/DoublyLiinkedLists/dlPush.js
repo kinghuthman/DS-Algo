@@ -25,13 +25,19 @@ class DoublyLinkedList {
     */
 
     push(val) {
+        // create a new node with the value passed to the function
         var newNode = new Node(val);
+        // if head is null
         if (this.head === null) {
+            // set head and tail to the new node
             this.head = newNode;
             this.tail = newNode;
         } else {
+            // the tails next node is new node
             this.tail.next = newNode;
+            // the previous element on new node is the tail
             newNode.prev = this.tail;
+            // the tail is now the new node
             this.tail = newNode;
         }
         this.length++;
