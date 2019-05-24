@@ -94,7 +94,18 @@ class BinarySearchTree {
         // invoke the helper function with the current variable
         traverse(this.root);
         return data;
-   }
+    }
+    DFSPostOrder(){
+        var data = [];
+        function traverse(node){
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+            // explore left then right then push in node
+            data.push(node.value)
+        }
+        traverse(this.root)
+        return data;
+    }
 }
 
 var tree = new BinarySearchTree();
@@ -108,3 +119,4 @@ console.log('treelist', tree)
 console.log('found', tree.search(10))
 console.log('bfs', tree.BFS())
 console.log('dfspreorder', tree.DFSPreOrder())
+console.log('dfspostorder', tree.DFSPostOrder())
