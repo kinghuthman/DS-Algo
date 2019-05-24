@@ -51,14 +51,57 @@ class HashTable {
         }
         return undefined;
     }
+    /* Values
+    Loops through the hash table array and returns an array of values in 
+    the table.
+    */
+    values() {
+        // array to store all data
+        let valuesArr = [];
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if (this.keyMap[i]) {
+                // this.keymap[i] referring to the subarray
+                for (let j = 0; j < this.keyMap[i].length; j++) {
+                    // push just the value
+                    if (!valuesArr.includes(this.keyMap[i][j][1]))
+                        valuesArr.push(this.keyMap[i][j][1])
+                }
+            }
+        }
+        return valuesArr;
+    }
+    /* Keys
+    Loops through the hash table array and returns an array of keys 
+    in the table
+    */
+    keys() {
+        // array to store all data
+        let keysArr = [];
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if (this.keyMap[i]) {
+                // this.keymap[i] referring to the subarray
+                for (let j = 0; j < this.keyMap[i].length; j++) {
+                    // push just the value
+                    if (!keysArr.includes(this.keyMap[i][j][0]))
+                        keysArr.push(this.keyMap[i][j][0])
+                }
+            }
+        }
+        return keysArr;
+    }
 }
+
+
 
 let ht = new HashTable(17);
 console.log('set', ht.set("hello", "goodbye"))
 console.log('set', ht.set("good", "morning"))
 console.log('set', ht.set("so", "long"))
 console.log('set', ht.set("take", "care"))
-console.log('set', ht.set("all is", "well"))
+console.log('set', ht.set("alls", "well"))
+console.log('set', ht.set("fare", "well"))
 console.log('set', ht.set("farewell", "mate"))
 console.log('ht', ht)
 console.log('get', ht.get("hello"))
+console.log('values', ht.values())
+console.log('keys', ht.keys())
