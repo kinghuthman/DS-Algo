@@ -1,4 +1,4 @@
-/* In order to implement merge sort, it's useful to first implement
+/* In order to implement quick sort, it's useful to first implement
 a function responsible for arranging elements in an array on 
 either side of a pivot.
     Given an array, this helper function should designate an element
@@ -26,7 +26,7 @@ the array length minus 1, respectively).
     Store the current pivot index in a variable (this will keep track of 
 where the pivot should end up).
     Loop through the array from the start until the end.
-        If the pivot is greater than the current element, increment the 
+        If the pivot is greater than the current/next element, increment the 
     pivot index variable and then swap the current element with the 
     element at the pivot index. 
     Swap the starting element (i.e the pivot) with the pivot index
