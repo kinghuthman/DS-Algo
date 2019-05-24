@@ -62,6 +62,46 @@ class BinarySearchTree {
             }
         }
     }
+
+    /* Starting at the root 
+        Check if there is a root, if not we're done searching!
+        If there is a root, check if the value of the new node is the
+    value we are looking for.
+        If not, check to see if the value is greater than or less than
+    the value of the root 
+        If it is greater
+            Check to see if there is a node to the right
+                If there is, move to that node and repeat these steps
+                If there is not, we're done searching!
+        If it is less
+            Check to see if there is a node to the left
+            If there is, move to that node and repeat these steps
+            If there is not, we're done searching!
+    */
+
+    search(value) {
+        if (this.root === null) return false;
+        var current = this.root,
+            found = false;
+        // something to loop over and haven't found value
+        while (current && !found) {
+            // if value is less than current value
+            if (value < current.value) {
+                // move on to the next node
+                current = current.left;
+                // value is greater than the current value
+            } else if (value > current.value) {
+                // move on to the node to the right
+                current = current.right;
+            } else {
+                found = true;
+            }
+        }
+        // indicates node wasn't found
+        if (!found) return undefined;
+        // return node
+        return current;
+    }
 }
 
 var tree = new BinarySearchTree();
@@ -73,3 +113,4 @@ console.log('tree', tree.insert(19))
 console.log('tree', tree.insert(88))
 console.log('treelist', tree)
 console.log('treelist', tree.insert(-1))
+console.log('found', tree.search(10))
