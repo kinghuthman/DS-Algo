@@ -64,10 +64,13 @@ function mergeSort(arr) {
     if (arr.length <= 1) return arr;
     // find the midpoint of the array
     let mid = Math.floor(arr.length / 2)
+    console.log('mid', mid)
     // break the left side of the array down recursively to sort/merge
     let left = mergeSort(arr.slice(0, mid));
+    console.log('left', left)
     // break the right side of the array down recursively to sort/merge
     let right = mergeSort(arr.slice(mid));
+    console.log('right', right)
     // return the two sorted sides as one merged array that is sorted
     return merge(left, right)
 }
