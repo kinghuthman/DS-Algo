@@ -1,10 +1,3 @@
-/* 
-    
-    
-    For each neighbor in vertex's neighbors if neighbor is not
-visited, recursively call dfs on neighbor
-*/
-
 class Graph {
     constructor() {
         this.adjacencyList = {};
@@ -108,6 +101,45 @@ end.
         }
         return result;
     }
+    /* Function should accept a starting vertex
+        Create a queue(can use an array) place the starting vertex in it
+        Create an array to store the nodes visited.
+        Create an object to store nodes visited.
+        Mark the starting vertex as visited.
+        Loop as long as there is anything in the queue.
+        Remove the first vertex from the queue and push it into the
+    array that stores nodes visited.
+        Loop over each vertex in the adjaceny list for the vertex you
+    are visiting. 
+        If it is not inside the object that stores nodes visited, mark
+    it as visited and enqueue that vertex.
+        Once you have finished looping, return the array of visited nodes.
+    */
+    breadthFirst(start) {
+        const queue = [start];
+        const visited = {};
+        const result = [];
+        let currentVertex;
+        visited[start] = true;
+        while (queue.length) {
+            // remove the first node from the beginning
+            currentVertex = queue.shift();
+            // push onto array that is returned at end
+            result.push(currentVertex);
+
+            // go to all of the currentvertex's neighbors
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                // has it been visited?
+                if (!visited[neighbor]) {
+                    // mark as visited
+                    visited[neighbor] = true;
+                    // push onto the queue
+                    queue.push(neighbor);
+                }
+            })
+        }
+        return result;
+    }
 }
 
 let g = new Graph()
@@ -128,3 +160,4 @@ console.log('addedge', g.addEdge("E", "F"))
 console.log(g)
 console.log('dfr', g.depthFirstRecursive("A"))
 console.log('dfr', g.depthFirstIterative("A"))
+console.log('bfs', g.breadthFirst("A"))
