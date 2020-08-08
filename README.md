@@ -52,7 +52,7 @@
     - as n grows the runtime squares in relation to the square of n
   - f(n) could be constant (f(n) = 1)
     - as n grows, it doesn't have an impact
-  - f(n) could be something entirely different! 
+  - f(n) could be something entirely different!
 
 ### Simplifying Big O Expressions
 
@@ -70,5 +70,15 @@
     - Shorthands
       - Arithmetic operations are constant
       - Variable assignment is constant
-      - Accessing elements in an array (by index) or object (by key) is constant 
+      - Accessing elements in an array (by index) or object (by key) is constant
       - In a loop, the complexity is the length of the loop times the complexity of whatever happens inside of the loop
+
+### Space Complexity
+
+- The amount of memory that is taken up
+- What about the inputs?
+  - Sometimes we'll hear about auxiliary space complexity to refer to space required by the algorithm not including space taken up by the  inputs
+- Basic rules of thumb
+  - Most primitives (booleans, numbers, undefined, null) are constant space
+  - Strings require O(n) space (where n is the string length)
+  - Reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects)
