@@ -82,3 +82,26 @@
   - Most primitives (booleans, numbers, undefined, null) are constant space
   - Strings require O(n) space (where n is the string length)
   - Reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects)
+
+### Logarithms
+
+- The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one. 
+  - Example
+    - log(8) = 3
+      - 8 / 4 / 2 /1
+    - log(25) = 4.64
+      - 25 / 12.5 / 6.25 / 3.125 / 1.56 / .7
+- Logarithm Complexity
+  - Logarithmic time complexity is great
+- Who Cares?
+  - Certain searching algorithms have logarithmic time complexity
+  - Efficient sorting algorithms involve logarithms
+  - Recursion sometimes involves logarithmic space complexity
+
+### Recap
+
+- To analyze the performance of an algorithm, we use Big O Notation
+- Big O Notation can give sus a high level understanding of the time or space complexity of an algorithm
+- Big O Notation doesn't care about precision, only about general trends (linear? quadratic? constant?)
+- The time or space complexity (as measured by Big O) depends only on the algorithm, not the hardware used to run algorithm
+
