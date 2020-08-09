@@ -105,3 +105,43 @@
 - Big O Notation doesn't care about precision, only about general trends (linear? quadratic? constant?)
 - The time or space complexity (as measured by Big O) depends only on the algorithm, not the hardware used to run algorithm
 
+## Analyzing Performance of Arrays and Objects
+
+### Section Introduction
+
+- Objectives
+  - Understand how objects and arrays work through the lens of Big O
+  - Explain why adding elements to the beginning of an array is costly
+  - Compare and contrast the runtime for arrays and objects, as well as built-in methods
+
+### The BIG O of Objects
+
+- When to use objects
+  - When you don't need order
+  - When you need fast access / insertion and removal
+- Big O of Objects
+  - Insertion - O(1)
+  - Removal - O(1)
+  - Searching - O(N)
+    - checking to see if a given piece of information is in a value somewhere, not lookup/access
+      - is 1 in this array [2, 4, 66, 12, 4]
+      - as the number of items in the array grows, n grows
+  - Access - O(1)
+
+### When are Arrays Slow
+
+- intrinsic order
+- When to use Arrays
+  - When you need order
+  - When you need fast access / insertion and removal (sort of)
+- Big O of Arrays
+  - Insertion - it depends
+    - Adding to the end is O(1)
+    - Adding to the beginning/anywhere but the end is brutal
+      - Have to reindex all of the items now
+      - O(N)
+  - Removal - it depends
+    - Removing end is fine
+    - Removing anywhere else have to reindex
+  - Searching - O(N)
+  - Access - O(1)
