@@ -1,6 +1,10 @@
 # Data Structures and Algorithms
 
-## Big O Notation  
+## Table of Contents
+
+> > [Frequency Counter Pattern](#frequencyCounterPattern)
+
+## Big O Notation
 
 ### Intro to Big O
 
@@ -30,7 +34,7 @@
 ### Counting Operations
 
 - Rather than counting seconds, which are so variable... We can count the number of simple operations the computer has to perform!
-  - n * (n + 1) / 2
+  - n \* (n + 1) / 2
     - this is three operations
     - it doesn't matter what n is, there are only three calculations happening
   - count assignments and operations
@@ -77,7 +81,7 @@
 
 - The amount of memory that is taken up
 - What about the inputs?
-  - Sometimes we'll hear about auxiliary space complexity to refer to space required by the algorithm not including space taken up by the  inputs
+  - Sometimes we'll hear about auxiliary space complexity to refer to space required by the algorithm not including space taken up by the inputs
 - Basic rules of thumb
   - Most primitives (booleans, numbers, undefined, null) are constant space
   - Strings require O(n) space (where n is the string length)
@@ -85,7 +89,7 @@
 
 ### Logarithms
 
-- The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one. 
+- The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
   - Example
     - log(8) = 3
       - 8 / 4 / 2 /1
@@ -145,3 +149,28 @@
     - Removing anywhere else have to reindex
   - Searching - O(N)
   - Access - O(1)
+
+## Problem Solving Approach
+
+- 5 Step Approach
+  - UnderStand the Problem
+  - Explore Concrete Examples
+  - Break It Down
+  - Solve Or Simplify
+  - Look Back and Refactor
+
+## Problem Solving Patterns
+
+### Intro
+
+- Different patterns, not going to work for everything
+  - just blueprints
+
+<a name="frequencyCounterPattern"></a>
+
+### Frequency Counter Pattern
+
+- This pattern uses objects or sets to collect values/frequencies of values
+  - This can often avoid the need for nested loops or O(N^2) operations with arrays / strings
+  - Store array values into objects as keys, with the values as 0, incrementing when one is found
+    - do comparison by looping through one of the objects and using bracket notation
