@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-> > [Problem Solving Approach](#ps-patterns)
+> > [Problem Solving Patterns](#ps-patterns)
 
 > > >[Frequency Counter Pattern](#frequencyCounterPattern)
 
