@@ -2,7 +2,9 @@
 
 ## Table of Contents
 
-> > [Frequency Counter Pattern](#frequencyCounterPattern)
+> > >[Problem Solving Approach](#ps-patterns)
+
+> > >[Frequency Counter Pattern](#frequencyCounterPattern)
 
 ## Big O Notation
 
@@ -158,6 +160,8 @@
   - Break It Down
   - Solve Or Simplify
   - Look Back and Refactor
+
+<a name="ps-patterns"></a>
 
 ## Problem Solving Patterns
 
