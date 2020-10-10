@@ -2,7 +2,9 @@
 
 ## Table of Contents
 
-> > [Frequency Counter Pattern](#frequencyCounterPattern)
+> > [Problem Solving Patterns](#problemSolvingPatterns)
+> >
+> > > [Frequency Counter Pattern](#frequencyCounterPattern)
 
 ## Big O Notation
 
@@ -159,6 +161,8 @@
   - Solve Or Simplify
   - Look Back and Refactor
 
+<a name="problemSolvingPatterns"></a>
+
 ## Problem Solving Patterns
 
 ### Intro
@@ -174,3 +178,8 @@
   - This can often avoid the need for nested loops or O(N^2) operations with arrays / strings
   - Store array values into objects as keys, with the values as 0, incrementing when one is found
     - do comparison by looping through one of the objects and using bracket notation
+
+### Multiple Pointers
+
+- Creating pointers or values that correspond to an index or position and move towards the beginning, end or middle based on a certain condition
+- Very efficient for solving problems with minimal space complexity as well
